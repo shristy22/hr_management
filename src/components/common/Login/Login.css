@@ -1,0 +1,19 @@
+.container1{
+    /* background-color: rgb(212, 236, 251); */
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    background-image: url('./../../../assets/wallpap2.jpg');
+    background-size: cover;
+}
+.form1{
+    /* border: 1px solid rgb(126, 134, 202); */
+    padding: 20px 50px 50px ;
+    /* margin-top: 10px; */
+    box-shadow: 0 4px 8px 0 #949dd8, 0 6px 20px 0 rgb(150 150 150);
+    /* margin-left: 100px; */
+}
+
+.PrivateTabIndicator-colorSecondary-3 {
+    background-color: rgb(48 59 140) !important;
+}

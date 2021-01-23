@@ -1,0 +1,30 @@
+.backColor{
+    background-color: rgb(174 175 179 / 63%);
+    height: 100vh;
+    /* padding: 0px 70px;
+    justify-content: center; */
+}
+.gridSpace{
+    padding: 0px 70px;
+    justify-content: center; 
+}
+.formControl {
+    /* margin: theme.spacing(1), */
+    /* width: 800px; */
+  }
+  .goBtn{
+    margin-left: 15px;
+    margin-top: 19px;
+  }
+  /* table tbody td{
+    border: 1px solid;
+    /* border-collapse: collapse; */
+  
+  table, td, th {
+    border: 1px solid black;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }

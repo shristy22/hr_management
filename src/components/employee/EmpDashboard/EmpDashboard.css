@@ -1,0 +1,28 @@
+.backColor{
+    background-color: whitesmoke;
+    /* height: 100%; */
+    /* padding: 0px 70px;
+    justify-content: center; */
+}
+.topColor{
+  background-color: rgb(48 59 140) !important;
+}
+/* .gridSpace{
+    padding: 0px 70px;
+    justify-content: center; 
+} */
+/* .grid1{
+    background-color:  rgb(48 59 140);;
+    color: white;
+} */
+.tabStyle{
+    /* height: 100%; */
+    background-color:  rgb(48 59 140);
+    color: white;
+    /* margin-top: '30px'; */
+}
+/* .MuiAppBar-colorPrimary {
+    color: #fff;
+    background-color: #3f51b5;
+} */
+
