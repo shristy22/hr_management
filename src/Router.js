@@ -4,6 +4,7 @@ import myProfile from './components/employee/myProfile/myProfile';
 import attendance from './components/employee/Attendance/Attendance';
 
 import adminDashboard from './components/admin/adminDashboard/adminDashboard';
+import addEmployee from './components/admin/addEmployee/addEmployee'
 // import myProfile from './components/employee/myProfile/myProfile';
 // import attendance from './components/employee/Attendance/Attendance';
 
@@ -33,6 +34,7 @@ function Routing() {
               <Route path="/empDashboard" component={EmpDashboard} />
               <Route path="/myProfile" component={myProfile} />
               <Route path="/attendance" component={attendance} />
+              <Route path="/addEmployee" component={addEmployee} />
             </Switch>
           </BrowserRouter>
       </div>
