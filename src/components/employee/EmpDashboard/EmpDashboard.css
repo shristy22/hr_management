@@ -1,28 +1,123 @@
-.backColor{
-    background-color: whitesmoke;
-    /* height: 100%; */
-    /* padding: 0px 70px;
-    justify-content: center; */
+.box.border.primary > .box-title{
+    background-color: #fff;
+border-bottom: 1px solid #e3dfdf;
+border-radius: 4px 4px 0 0;
+font-size: 1.5em;
+color: #333 !important;
 }
-.topColor{
-  background-color: rgb(48 59 140) !important;
+.calender{
+    font-size: 12px;
+    display: block;
+    margin-top: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
-/* .gridSpace{
-    padding: 0px 70px;
-    justify-content: center; 
-} */
-/* .grid1{
-    background-color:  rgb(48 59 140);;
-    color: white;
-} */
-.tabStyle{
-    /* height: 100%; */
-    background-color:  rgb(48 59 140);
-    color: white;
-    /* margin-top: '30px'; */
+.cal-top{
+    margin-bottom: 5px;
+    margin-right: 10px;
+    float: left !important;
 }
-/* .MuiAppBar-colorPrimary {
-    color: #fff;
-    background-color: #3f51b5;
-} */
+.absent-icon{
+    background-color: #d6524d;
+    border-radius: 50%;
+    float: left;
+    width: 10px;
+    height: 10px;
+    margin-top: 4px;
+    margin-right: 5px;
 
+}
+.leave-applied-icon{
+background-color: #c7c7c7;
+border-radius: 50%;
+float: left;
+width: 10px;
+height: 10px;
+margin-top: 4px;
+margin-right: 5px;
+}
+.half-day-icon {
+    margin-top: 4px;
+    margin-right: 5px;
+    float: left;
+    transform: rotate(-90deg);
+    border-radius: 50%;
+}
+.leave-appr-icon {
+    background-color: #6500ca;
+    border-radius: 50%;
+    float: left;
+    width: 10px;
+    height: 10px;
+    margin-top: 4px;
+    margin-right: 5px;
+}
+.present-icon {
+    background-color: #7bb956;
+    border-radius: 50%;
+    float: left;
+    width: 10px;
+    height: 10px;
+    margin-top: 4px;
+    margin-right: 5px;
+}
+.outdoor-appr-icon {
+    background-color: #ffe122;
+    border-radius: 50%;
+    float: left;
+    width: 10px;
+    height: 10px;
+    margin-top: 4px;
+    margin-right: 5px;
+}
+.calender-left{
+    width: 70%;
+    float: left;
+}
+.calender-right{
+    width: 30%;
+    min-width: 130px;
+    padding: 10px;
+    text-align: center;
+    float: right;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.panel-default {
+    border-color: #dddddd;
+}
+.absent-label {
+    font-family: 'Open Sans';
+    font-size: 12px!important;
+    font-weight: 700;
+    color: #5f87b0 !important;
+    margin-bottom: 10px!important;
+}
+
+
+  
+    .Sample__container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin: 10px 0;
+      padding: 10px;
+    }
+  
+      
+    .Sample__container__content {
+        display: flex;
+        max-width: 100%;
+        flex-basis: 420px;
+        flex-direction: column;
+        flex-grow: 100;
+        align-items: stretch;
+        padding-top: 1em;
+    }

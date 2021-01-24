@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Typography } from "@material-ui/core";
-import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
+import Layout from "./../../common/Layout/Layout";
 import "./EmpDashboard.css";
-
+import Grid from "@material-ui/core/Grid";
 import { useHistory } from "react-router-dom";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-// import TextField from '@material-ui/core/TextField';
-import { Col, Form, FormGroup, Label, Input } from "reactstrap";
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
+import Button from "@material-ui/core/Button";
+import Calendar from 'react-calendar';
+
 
 const EmpDashboard = () => {
   const [value, setValue] = React.useState(0);
+  const [value1, onChange] = useState(new Date());
+
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -25,287 +24,88 @@ const EmpDashboard = () => {
   };
 
   return (
-    <div className="backColor">
-      {/* <h1 style={{fontFamily:'Georgia,serif', textAlign:'center', color:'rgb(6 25 162)'}}>Welcome Shristy !!</h1> */}
-      <AppBar position="sticky" className="topColor">
-        <Toolbar>
-          <Typography
-            variant="h6"
-            style={{ flexGrow: "1", textAlign: "center" }}
-          >
-            Company Portal
-          </Typography>
-          <Button>Increment</Button>
-          <Button>Decrement</Button>
-        </Toolbar>
-      </AppBar>
-      <Grid container spacing={6} className="gridSpace">
-        <Grid item xs={6} md={2} lg={2} className="tabStyle">
-          <Tabs
-            orientation="vertical"
-            variant="scrollable"
-            value={value}
-            onChange={handleChange}
-            aria-label="Vertical tabs example"
-            // className="tabStyle"
-          >
-            <Tab
-              label="Add employee"
-              // {...a11yProps(0)}
-            />
-            <Tab
-              label="View employee"
-              // {...a11yProps(0)}
-            />
-            <Tab
-              label="View Attendance"
-              // {...a11yProps(0)}
-            />
-            <Tab
-              label="Salary Approve"
-              // {...a11yProps(0)}
-            />
-            <Tab
-              label="Employee benefits Approve"
-              //{...a11yProps(0)}
-            />
-            <Tab
-              label="Loans Approve"
-              // {...a11yProps(0)}
-            />
-          </Tabs>
-        </Grid>
-        <Grid item xs={6} md={10} lg={10} style={{ marginTop: "30px" }}>
-          <Form>
-            <FormGroup row>
-              <Label for="exampleEmail" sm={2} md={2} lg={2}>Email </Label>
-              <Col sm={8}>
-                <Input
-                  type="email"
-                  name="email"
-                  id="exampleEmail"
-                  placeholder="with a placeholder"
-                  />
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="examplePassword" sm={2} md={2} lg={2}>
-                Password
-              </Label>
-              <Col sm={8}>
-                <Input
-                  type="password"
-                  name="password"
-                  id="examplePassword"
-                  placeholder="password placeholder"
-                />
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="exampleSelect" sm={2} md={2} lg={2}>
-                Account Access
-              </Label>
-              <Col sm={8}>
-                <Input
-                  type="select"
-                  name="select"
-                  id="exampleSelect"
-                  placeholder="select"
-                >
-                  <option hidden value="hi">
-                    select
-                  </option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </Input>
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="exampleSelect" sm={2} md={2} lg={2}>
-                Role
-              </Label>
-              <Col sm={8}>
-                <Input type="select" name="select" id="exampleSelect">
-                  <option hidden value="hi">
-                    select
-                  </option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </Input>
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="exampleSelect" sm={2} md={2} lg={2}>
-                Gender
-              </Label>
-              <Col sm={4}>
-                <Label check style={{ marginLeft: "25px" }}>
-                  <Input type="radio" name="radio1" /> Male
-                </Label>
-              </Col>
-              <Col sm={4}>
-                <Label check>
-                  <Input type="radio" name="radio1" /> Female
-                </Label>
-              </Col>
-            </FormGroup>
+        <div>
+        <Layout/>
+        <Grid container spacing={4}>
+        <Grid item xs={6} md={6} lg={6} className="box border primary">
+           <div className="box-title">
+               <AccessTimeIcon/>
+               <span>Time and Attendance</span>
+           </div>
+           <div style={{overflow:'visible'}} >
+                <div className="calender">
+                    <div className="cal-top">
+                        <div className="absent-icon"></div>
+                        <span>Absent</span>
+                    </div> 
+                    <div className="cal-top">
+                        <div className="leave-applied-icon"></div>
+                        <span>Leave Applied</span>
+                    </div>
+                    <div className="cal-top">
+                        <div className="half-day-icon"></div>
+                        <span>Half Day</span>
+                    </div>
+                    <div className="cal-top">
+                        <div className="leave-appr-icon "></div>
+                        <span>Leave Approved</span>
+                    </div>
+                    <div className="cal-top">
+                        <div className="present-icon "></div>
+                        <span>Present</span>
+                    </div>
+                    <div className="cal-top">
+                        <div className="outdoor-appr-icon "></div>
+                        <span>Outdoor Approved</span>
+                    </div>
+                </div>
+                <div className="calender-left">
+                    <div style={{display:'flex'}}>        
+                        <p>January 2021</p>
+                        <Button color="primary" variant="outlined" type="button" size="small">
+                              Holidays
+                        </Button>
+                    </div>
+                    <div>
 
-            <FormGroup row>
-              <Label for="examplePassword" sm={2} md={2} lg={2}>
-                First Name
-              </Label>
-              <Col sm={8}>
-                <Input
-                  type="password"
-                  name="password"
-                  id="examplePassword"
-                  placeholder="password placeholder"
-                />
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="examplePassword" sm={2} md={2} lg={2}>
-                Middle Name
-              </Label>
-              <Col sm={8}>
-                <Input
-                  type="password"
-                  name="password"
-                  id="examplePassword"
-                  placeholder="password placeholder"
-                />
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="examplePassword" sm={2} md={2} lg={2}>
-                Last Name
-              </Label>
-              <Col sm={8}>
-                <Input
-                  type="password"
-                  name="password"
-                  id="examplePassword"
-                  placeholder="password placeholder"
-                />
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="exampleDate" sm={2} md={2} lg={2}>
-                Date
-              </Label>
-              <Col sm={8}>
-                <Input
-                  type="date"
-                  name="date"
-                  id="exampleDate"
-                  placeholder="date placeholder"
-                />
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="examplePassword" sm={2} md={2} lg={2}>
-                Contact No
-              </Label>
-              <Col sm={8}>
-                <Input
-                  type="password"
-                  name="password"
-                  id="examplePassword"
-                  placeholder="password placeholder"
-                />
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="examplePassword" sm={2} md={2} lg={2}>
-                Employee Code
-              </Label>
-              <Col sm={8}>
-                <Input
-                  type="password"
-                  name="password"
-                  id="examplePassword"
-                  placeholder="password placeholder"
-                />
-              </Col>
-            </FormGroup>
-
-            <FormGroup row>
-              <Label for="exampleSelect" sm={2} md={2} lg={2}>
-                Department
-              </Label>
-              <Col sm={8}>
-                <Input type="select" name="Select" id="exampleSelect">
-                  <option hidden value="hi">
-                    select
-                  </option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </Input>
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="exampleSelect" sm={2} md={2} lg={2}>
-                Position
-              </Label>
-              <Col sm={8}>
-                <Input type="select" name="select" id="exampleSelect">
-                  <option hidden value="hi">
-                    select
-                  </option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </Input>
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="exampleDate" sm={2} md={2} lg={2}>
-                Date of joining
-              </Label>
-              <Col sm={8}>
-                <Input
-                  type="date"
-                  name="date"
-                  id="exampleDate"
-                  placeholder="date placeholder"
-                />
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="exampleDate" sm={2} md={2} lg={2}>
-                Date of Termination
-              </Label>
-              <Col sm={8}>
-                <Input
-                  type="date"
-                  name="date"
-                  id="exampleDate"
-                  placeholder="date placeholder"
-                />
-              </Col>
-            </FormGroup>
-            <FormGroup check row>
-              <Col sm={{ size: 10, offset: 5 }}>
-                <Button color="primary" variant="contained">
-                  Submit
-                </Button>
-              </Col>
-            </FormGroup>
-          </Form>
+                    </div>
+                </div>
+                <div className="calender-right">
+                    <div className="panel panel-default">
+                        <div className="absent-label">
+                            <span>Absent in current month</span>
+                        </div>
+                    </div>
+                    <Button color="primary" variant="outlined" type="button" size="small">
+                              Sick Leave
+                        </Button>
+                        <Button color="primary" variant="outlined" type="button" size="small">
+                              Casual Leave
+                        </Button>
+                    
+                </div>
+            </div>
         </Grid>
-      </Grid>
-    </div>
+
+        <Grid item xs={6} md={6} lg={6}>
+            <PersonOutlineIcon/>
+            <span>Employee Connect</span>
+       
+        </Grid>
+        </Grid>
+       
+       
+      <div className="Sample__container">
+        <main className="Sample__container__content">
+          <Calendar
+            onChange={onChange}
+            value={value1}
+          />
+        </main>
+      </div>
+    
+        </div>
+
   );
 };
 export default EmpDashboard;

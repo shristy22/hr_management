@@ -12,6 +12,10 @@ const AddEmployee = (props) => {
     const [password, setPassword] = React.useState('');
     const [empcode, setEmpcode] = React.useState('');
     const [designation, setDesignation] = React.useState('');
+    const [team, setTeam] = React.useState('');
+    const [reportingManager, setReportingManager] = React.useState('');
+    const [male, setMale] = React.useState('');
+    const [female, setFemale] = React.useState('');
     const [firstName, setFirstName] = React.useState('');
     const [lastName, setLastName] = React.useState('');
     const [dob, setDOB] = React.useState('');
@@ -22,7 +26,7 @@ const AddEmployee = (props) => {
     const [country, setCountry] = React.useState('');
     const [identificationMark, setIdentificationMark] = React.useState('');
 
-
+    
 
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -96,7 +100,7 @@ const AddEmployee = (props) => {
                                 id="password"
                                 placeholder="password" 
                                 value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                                onChange={(e) => setPassword(e.target.value)}
                                 //   ref={passwordI}
                                 />
                             </Col>
@@ -262,34 +266,43 @@ const AddEmployee = (props) => {
                         />
                     </Col>
                     </FormGroup>
+                
                     <FormGroup row>
                     <Label for="exampleSelect" sm={2} md={2} lg={2}>
                         Marital Status                   
                     </Label>
                     <Col sm={8}>
                     <Input
-                        type="blood group"
-                        name="blood gropu"
+                        type="select"
+                        name="name"
                         id="blood"
                         // placeholder="blood group "
                         value={maritalStatus}
-                        onChange={(e) => setMaritalStatus(e.target.value)}
-                        
-                        />
+                        onChange={(e) => setMaritalStatus(e.target.value)}>
+                            <option value="married">Married</option>
+                            <option value="unmarried">Unmarried</option>
+                        </Input>
                     </Col>
                     </FormGroup>
+                   
                     <FormGroup row>
                     <Label for="exampleSelect" sm={2} md={2} lg={2}>
                         Gender
                     </Label>
                     <Col sm={4}>
                         <Label check style={{ marginLeft: "25px" }}>
-                        <Input type="radio" name="radio1" /> Male
+                        <Input type="radio" name="radio1"
+                        value={male}
+                        onChange={(e) => setMale(e.target.value)}
+                        /> Male
                         </Label>
                     </Col>
                     <Col sm={4}>
                         <Label check>
-                        <Input type="radio" name="radio1" /> Female
+                        <Input type="radio" name="radio1" 
+                        value={female}
+                        onChange={(e) => setFemale(e.target.value)}
+                        /> Female
                         </Label>
                     </Col>
                     </FormGroup>
@@ -329,7 +342,9 @@ const AddEmployee = (props) => {
                             type="name"
                             name="date"
                             id="exampleDate"
-                            placeholder=""/>
+                            placeholder=""
+                            value={designation}
+                        onChange={(e) => setDesignation(e.target.value)}/>
                         </Col>
                     </FormGroup>
                     <FormGroup row>
@@ -353,7 +368,9 @@ const AddEmployee = (props) => {
                             type="name"
                             name="date"
                             id="exampleDate"
-                            placeholder=""/>
+                            placeholder=""
+                            value={team}
+                        onChange={(e) => setTeam(e.target.value)}/>
                         </Col>
                     </FormGroup>
                     <FormGroup row>
@@ -365,7 +382,10 @@ const AddEmployee = (props) => {
                             type="name"
                             name="date"
                             id="exampleDate"
-                            placeholder=""/>
+                            placeholder=""
+                            value={reportingManager}
+                        onChange={(e) => setReportingManager(e.target.value)}
+                            />
                         </Col>
                     </FormGroup>
                     
